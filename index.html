@@ -5,7 +5,7 @@ product = product.replace("_", "%20");
 product_id = product.replace("%20", "_");
 product_name = product.replace("%20", " ");
 
-search_link = "http://www.aliexpress.com/wholesale?SearchText=" + product_name;
+search_link = "http://www.aliexpress.com/wholesale?SearchText=" + product;
 aliexpress_item_link = "https://www.aliexpress.com/item/"
    
 // Lolin D32
@@ -16,7 +16,7 @@ items["lolin_d32"] = "32808551116";
 
 function generate_links() {
    //document.body.innerHTML = ""
-   document.body.innerHTML += '<h1>'+ product +'</h1>'
+   document.body.innerHTML += '<h1>'+ product_name +'</h1>'
    document.body.innerHTML += '<h1><a href="'+ docs[product_id] + '"> 📖 Documentation </a></h1>'
    document.body.innerHTML += '<h1><a href="'+ aliexpress_item_link + items[product_id] + '".htm"> 🛒 Buy </a></h1>'
    document.body.innerHTML += '<h1><a href="' + search_link + '"> 🔍 Search Aliexpress</a></h1>'
