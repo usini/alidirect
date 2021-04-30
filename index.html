@@ -1,9 +1,30 @@
 <script>
-product = window.location.href.split("/")[3].slice(1).replace("_","%20");
-if(product == "lolin%20d32"){
-   document.body.innerHTML = "<h1>Lolin D32</h1><h1><a href='https://www.wemos.cc/en/latest/d32/d32.html>'> 📖 Documentation </a></h1><h1>     <a href='https://www.aliexpress.com/item/32808551116.htm'> 🛒 Buy </a></h1><h1>    <a href='http://www.aliexpress.com/wholesale?SearchText=lolin%20d32'> 🔍 Search Aliexpress</a></h1>"
-} else {
-  window.location.href = "http://www.aliexpress.com/wholesale?SearchText=" + product;
+product = window.location.href.split("/")[3].slice(1)
+product_name = product.replace("%20", " ");
+product_id = product.replace("%20", "_");
+
+search_link = "http://www.aliexpress.com/wholesale?SearchText=" + product_id;
+aliexpress_item_link = "https://www.aliexpress.com/item/"
+   
+// Lolin D32
+docs = {};
+items = {};
+docs["lolin_d32"]  = "https://www.wemos.cc/en/latest/d32/d32.html";
+items["lolin_d32"] = "32808551116";
+
+function generate_links() {
+   document.body.innerHTML = ""
+   document.body.innerHTML =+ '<h1>'+ product +'</h1>'
+   document.body.innerHTML =+ '<h1><a href="'+ docs[product_id] + '"> 📖 Documentation </a></h1>'
+   document.body.innerHTML =+ '<h1><a href="'+ aliexpress_item_link + items[product_id] + '".htm"> 🛒 Buy </a></h1>'
+   document.body.innerHTML =+ '<h1><a href="' + search_link + '"> 🔍 Search Aliexpress</a></h1>'
 }
+   
+if(product_id == "lolin_d32"){
+   generate_links();
+} else {
+  window.location.href = search_link;
+}
+
 </script>
 <body></body>
