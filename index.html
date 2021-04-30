@@ -1,8 +1,9 @@
 <body></body>
 <script>
 product = window.location.href.split("/")[3].slice(1)
-product_name = product.replace("_", " ");
+product = product.replace("_", "%20");
 product_id = product.replace("%20", "_");
+product_name = product.replace("%20", " ");
 
 search_link = "http://www.aliexpress.com/wholesale?SearchText=" + product_name;
 aliexpress_item_link = "https://www.aliexpress.com/item/"
