@@ -6,29 +6,40 @@ product_id = product.replace("%20", "_");
 product_name = product.replace("%20", " ");
 
 search_link = "http://www.aliexpress.com/wholesale?SearchText=" + product;
-aliexpress_item_link = "https://www.aliexpress.com/item/"
+aliexpress_item_link = "https://www.aliexpress.com/item/";
 docs = {};
 items = {};
 images = {};
    
 // Lolin D32
 docs["lolin_d32"]  = "https://www.wemos.cc/en/latest/d32/d32.html";
-items["lolin_d32"] = "32808551116";
-images["lolin_d32"] = "https://raw.githubusercontent.com/usini/diagrams/main/Boards/esp32/wemos_lolin_D32.svg"
+items["lolin_d32"] = aliexpress_item_link + "32808551116" + ".html";
+images["lolin_d32"] = "https://raw.githubusercontent.com/usini/diagrams/main/Boards/esp32/wemos_lolin_D32.svg";
+   
+// Generic Lipo
+docs["lipo"]  = "https://hobbyking.com/en_us/turnigy-2000mah-1s-1c-lipoly-w-2-pin-jst-ph-connector.html";
+items["lipo"] = "https://hobbyking.com/en_us/turnigy-2000mah-1s-1c-lipoly-w-2-pin-jst-ph-connector.html";
+images["lipo"] = "https://raw.githubusercontent.com/usini/diagrams/main/PowerSupply/battery_lithium_ion_2000mah.svg";
 
 function generate_links() {
    //document.body.innerHTML = ""
-   document.body.innerHTML += '<h1>'+ product_name +'</h1>'
-   document.body.innerHTML += '<img src="' + images[product_id] + '">' 
-   document.body.innerHTML += '<h1><a href="'+ docs[product_id] + '"> 📖 Documentation </a></h1>'
-   document.body.innerHTML += '<h1><a href="'+ aliexpress_item_link + items[product_id] + '.html"> 🛒 Buy </a></h1>'
-   document.body.innerHTML += '<h1><a href="' + search_link + '"> 🔍 Search Aliexpress</a></h1>'
+   document.body.innerHTML += '<h1>'+ product_name +'</h1>';
+   document.body.innerHTML += '<img src="' + images[product_id] + '">' ;
+   document.body.innerHTML += '<h1><a href="'+ docs[product_id] + '"> 📖 Documentation </a></h1>';
+   document.body.innerHTML += '<h1><a href="'+ items[product_id] + '"> 🛒 Buy </a></h1>';
+   document.body.innerHTML += '<h1><a href="' + search_link + '"> 🔍 Search Aliexpress</a></h1>';
 }
-   
-if(product_id == "lolin_d32"){
-   generate_links();
-} else {
-  window.location.href = search_link;
+
+switch (product_id){
+   case "lolin_d32":
+      generate_links();
+   break;
+   case "lipo":
+      generate_links();
+   break;
+   default:
+      window.location.href = search_link;
+   break;
 }
 
 </script>
