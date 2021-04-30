@@ -48,7 +48,7 @@ if (navigator.language.includes("fr")){
    
 function generate_links() {
    //document.body.innerHTML = ""
-   document.body.innerHTML += '<h1>'+ product_name +'</h1>';
+   document.getElementById("generated").innerHTML += '<h1>'+ product_name +'</h1>';
    if(docs[product_id] !== undefined){
        document.getElementById("generated").innerHTML += '<img src="' + images[product_id] + '">' ;
        document.getElementById("generated").innerHTML += '<h1><a href="'+ docs[product_id] + '"> 📖 Documentation </a></h1>';
