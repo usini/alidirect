@@ -1,9 +1,10 @@
-<body></body>
-<br>
-<br>
+<body>
+<div id="generated"></div>
 <a href="ali.usini.eu/?lolin_d32">Lolin d32</a><br>
 <a href="ali.usini.eu/?lipo">Lipo 2000mAh</a><br>
 <a href="ali.usini.eu/?mpr121">MPR121</a>
+</body>
+
 
 
 <script>
@@ -49,12 +50,12 @@ function generate_links() {
    //document.body.innerHTML = ""
    document.body.innerHTML += '<h1>'+ product_name +'</h1>';
    if(docs[product_id] !== undefined){
-       document.body.innerHTML += '<img src="' + images[product_id] + '">' ;
-       document.body.innerHTML += '<h1><a href="'+ docs[product_id] + '"> 📖 Documentation </a></h1>';
-       document.body.innerHTML += '<h1><a href="'+ items[product_id] + '"> 🛒 ' + lang["buy"] + '</a></h1>';
+       document.getElementById("generated").innerHTML += '<img src="' + images[product_id] + '">' ;
+       document.getElementById("generated").innerHTML += '<h1><a href="'+ docs[product_id] + '"> 📖 Documentation </a></h1>';
+       document.getElementById("generated").innerHTML += '<h1><a href="'+ items[product_id] + '"> 🛒 ' + lang["buy"] + '</a></h1>';
    }
-   document.body.innerHTML += '<h1><a href="' + search_link + '"> 🔍 ' + lang["Search"] + ' Aliexpress</a></h1>';
-   document.body.innerHTML += '<h1><a href="' + search_link + '"> 🔍 ' + lang["Search"] + ' Amazon</a></h1>';
+   document.getElementById("generated").innerHTML += '<h1><a href="' + aliexpress_search_link + '"> 🔍 ' + lang["Search"] + ' Aliexpress</a></h1>';
+   document.getElementById("generated").innerHTML += '<h1><a href="' + amazon_search_link + '"> 🔍 ' + lang["Search"] + ' Amazon</a></h1>';
 }
    
 generate_links();
