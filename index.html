@@ -1,4 +1,8 @@
 <script>
 product = window.location.href.split("/")[3].slice(1).replace("_","%20");
-window.location.href = "http://www.aliexpress.com/wholesale?SearchText=" + product;
+if(product == "lolin%20d32){
+   document.body.innerHTML = "<h1>Lolin D32</h1><h1><a href='https://www.wemos.cc/en/latest/d32/d32.html>'> 📖 Documentation </a></h1><h1>     <a href='https://www.aliexpress.com/item/32808551116.htm'> 🛒 Buy </a></h1><h1>    <a href='http://www.aliexpress.com/wholesale?SearchText=lolin%20d32'> 🔍 Search Aliexpress</a></h1>"
+} else {
+  window.location.href = "http://www.aliexpress.com/wholesale?SearchText=" + product;
+}
 </script>
