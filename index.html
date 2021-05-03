@@ -7,9 +7,9 @@
 
 <script>
 product = window.location.href.split("?")[1];
-product = product.replace("_", "%20");
-product_id = product.replace("%20", "_");
-product_name = product.replace("%20", " ");
+product = product.replaceAll("_", "%20");
+product_id = product.replaceAll("%20", "_");
+product_name = product.replaceAll("%20", " ");
 
 aliexpress_search_link = "http://www.aliexpress.com/wholesale?SearchText=" + product;
 aliexpress_item_link = "https://www.aliexpress.com/item/";
